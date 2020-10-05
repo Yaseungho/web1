@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Event 등록</title>
+    <meta charset="utf-8">
+    <script>
+        function displayTime() {
+            var d = new Date();
+            alert("현재 시간은 " + d.toLocaleDateString() + "입니다");
+        }
+        //window객체의 onload 속성에 함수를 저장한다. //이 함수는 웹 브라우저가 문서를 모두 읽어 들인 후에 실행된다. window.onload = function() {
+        //input 요소의 객체 가져오기
+        var btn = document.getElementById("btn"); //btn을 클릭했을 때 동작하는 이벤트 처리기를 등록한다. btn.onclick = displayTime; };
+
+    </script>
+</head>
+
+<body>
+    <input type="button" value="click" id="btn">
+</body>
+
+</html>
