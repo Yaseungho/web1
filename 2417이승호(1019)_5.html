@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_1.html -->
+
+<head>
+    <title> Canvas 2D API</title>
+    <meta charset="utf-8">
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById('canvas');
+            if (canvas.getContext) {
+                var ctx1 = canvas.getContext('2d');
+                ctx1.beginPath();
+                ctx1.moveTo(50,50);
+                ctx1.lineTo(100,50);
+                ctx1.lineTo(50,100);
+                ctx1.fill();
+                var ctx2 = canvas.getContext('2d');
+                ctx2.beginPath();
+                ctx2.moveTo(110,110);
+                ctx2.lineTo(60,110);
+                ctx2.lineTo(110,60);
+                ctx2.lineTo(110,110);
+                ctx2.stroke();
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas" height="400" width="400">This browser doesn't support canvas</canvas>
+</body>
+
+</html>
