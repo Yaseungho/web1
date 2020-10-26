@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_3.html -->
+
+<head>
+    <title> Canvas 2D API-1</title>
+    <script>
+        function drawCircle() {
+            //stroke 테스트
+            var canvas1 = document.getElementById("canvas1");
+            var context1 = canvas1.getContext("2d");
+            context1.beginPath();
+            context1.moveTo(10, 160);
+            context1.lineTo(10, 40);
+            context1.arc(40, 40, 30, 180 * Math.PI / 180, 270 * Math.PI / 180, false);
+            context1.lineTo(200, 10);
+            context1.arc(200, 40, 30, -Math.PI / 2, 0, false);
+            context1.lineTo(230, 160);
+            context1.arc(200, 160, 30, 0, 90 * Math.PI / 180, false);
+            context1.lineTo(40, 190);
+            context1.arc(40, 160, 30, 90 * Math.PI / 180, 180 * Math.PI / 180, false);
+            context1.stroke();
+
+            var canvas2 = document.getElementById("canvas2");
+            var context2 = canvas2.getContext("2d");
+            context2.beginPath();
+            context2.moveTo(10, 160);
+            context2.lineTo(10, 80);
+            context2.arc(80, 80, 70, 180 * Math.PI / 180, 270 * Math.PI / 180, false);
+            context2.lineTo(200, 10);
+            context2.arc(200, 80, 70, -Math.PI / 2, 0, false);
+            context2.lineTo(270, 160);
+            context2.arc(200, 160, 70, 0, 90 * Math.PI / 180, false);
+            context2.lineTo(80, 230);
+            context2.arc(80, 160, 70, 90 * Math.PI / 180, 180 * Math.PI / 180, false);
+            context2.stroke();
+        }
+    </script>
+</head>
+
+<body onload="drawCircle();">
+    <div>
+        <canvas id="canvas1" width="300" height="300"></canvas>
+    </div>
+    <div>
+        <canvas id="canvas2" width="300" height="300"></canvas>
+    </div>
+</body>
+
+</html>
