@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input id="textBtn" type="button" value="Text 예제 보이기" onclick="ToggleText();">
+    <input id="imageBtn" type="button" value="Image 예제 보이기" onclick="ToggleImage();">
+    <br />
+    <canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+    <br />
+    <img id="scream" width="220" height="277" src="pic_the_scream.jpg" alt="The Scream">
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var textToggled = false;
+        var imageToggled = false;
+
+        function ToggleText() {
+            if (textToggled == true) {
+                textToggled = false;
+                ctx.clearRect(0, 0, 240, 297);
+                document.getElementById("textBtn").value = "Text 예제 보이기";
+                document.getElementById("imageBtn").value = "Image 예제 보이기";
+            } else {
+                textToggled = true;
+                ctx.font = "30px Comic Sans MS";
+                ctx.fillStyle = "red";
+                ctx.textAlign = "center";
+                ctx.fillText("hello world", canvas.width / 2, canvas.height / 2);
+                document.getElementById("textBtn").value = "Text 예제 숨기기";
+            }
+        }
+        
+        function ToggleImage() {
+            if (imageToggled == true) {
+                imageToggled = false;
+                ctx.clearRect(0, 0, 240, 297);
+                document.getElementById("textBtn").value = "Text 예제 보이기";
+                document.getElementById("imageBtn").value = "Image 예제 보이기";
+            } else {
+                imageToggled = true;
+                var img = document.getElementById("scream");
+                ctx.drawImage(img, 10, 10);
+                document.getElementById("imageBtn").value = "Image 예제 숨기기";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
